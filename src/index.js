@@ -1,2 +1,2 @@
-window.sharedComponent = "http://localhost:6002"
-import("./core/bootstrap")
+window.sharedComponent = "http://localhost:6002";
+import("./core/bootstrap");

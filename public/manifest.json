@@ -1,0 +1,17 @@
+{
+  "moduleName": "mfe_app",
+  "appRoutes": [
+    {
+      "label": "Home",
+      "navGroups": [
+        {
+          "label": "About"
+        }
+      ]
+    }
+  ],
+  "components": [
+    "./header",
+    "./appRoutes"
+  ]
+}

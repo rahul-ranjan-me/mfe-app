@@ -1,4 +1,4 @@
-import React, { useContext, useRef, Suspense } from "react";
+import React, { useContext, useRef } from "react";
 import { GlobalContext } from "shared/Components";
 
 const Home = () => {
@@ -7,14 +7,14 @@ const Home = () => {
   const onBtnClick = () => setUser(userRef.current.value);
 
   return (
-    <Suspense fallback="loading">
+    <>
       <h1>{`This is a home page ${user}`}</h1>
       <input type="text" ref={userRef} />
 
       <button type="button" onClick={onBtnClick}>
         Update
       </button>
-    </Suspense>
+    </>
   );
 };
 

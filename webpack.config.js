@@ -1,24 +1,19 @@
 require("@babel/register")({
-  presets: [require("@babel/preset-env").default]
-})
+  presets: [require("@babel/preset-env").default],
+});
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ModuleFederationPlugin =
   require("webpack").container.ModuleFederationPlugin;
-const ExternalTemplateRemotesPlugin = require("external-remotes-plugin")
+const ExternalTemplateRemotesPlugin = require("external-remotes-plugin");
 const path = require("path");
 const deps = require("./package.json").dependencies;
 const mode = process.env.mode ? process.env.mode : "development";
 const port = process.env.port || 6003;
-const {allComponents} = require(path.resolve(
+const { allComponents, moduleName } = require(path.resolve(
   __dirname,
   "src/appRoutesComponentConfig.js"
-))
-
-const manifest = require(path.resolve(
-  __dirname,
-  "public/manifest.json"
-))
+));
 
 module.exports = {
   entry: "./src/index",
@@ -54,11 +49,7 @@ module.exports = {
       },
       {
         test: /\.s?css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader",
-        ],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
         test: /\.(png|svg|eot|woff|ttf|jpg|jpeg|gif)$/i,
@@ -74,7 +65,7 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: manifest.moduleName,
+      name: moduleName,
       filename: "remoteEntry.js",
       remotes: {
         shared: "shared_components@[window.sharedComponent]/remoteEntry.js",
@@ -84,11 +75,11 @@ module.exports = {
         {
           react: {
             singleton: true,
-            requiredVersion: '18.0.0',
+            requiredVersion: "18.0.0",
           },
           "react-dom": {
             singleton: true,
-            requiredVersion: '18.0.0',
+            requiredVersion: "18.0.0",
           },
         },
       ],

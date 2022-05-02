@@ -1,9 +1,8 @@
-import React, { lazy, Suspense } from "react";
-
-const Home = lazy(() => import("../pages/home"));
-const About = lazy(() => import("../pages/about"));
+import React from "react";
+import Home from "../pages/home";
+import About from "../pages/about";
 
 export default [
-  { path: "/", element: <Suspense fallback={"loading"}><Home /> </Suspense>},
-  { path: "/about", element: <Suspense fallback={"loading"}><About /> </Suspense>},
+  { path: "payments", element: <Home /> },
+  { path: "payments/about", element: <About /> },
 ];

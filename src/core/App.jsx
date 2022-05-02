@@ -5,9 +5,9 @@ import AppRoutes from "./AppRoutes";
 
 import "./index.scss";
 
-function App({ manifestData = [] }) {
+function App() {
   return (
-    <GlobalState manifestData={manifestData}>
+    <GlobalState>
       <div className="app">
         <Router>
           <Header />

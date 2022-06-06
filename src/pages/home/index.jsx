@@ -13,8 +13,15 @@ const Home = () => {
       <input type="text" ref={userRef} />
       <button type="button" onClick={onBtnClick}>
         Update
-      </button> <br /><br />
-      <Link to="/payments/about">Go to same micro-frontend deeper link</Link> <br />
+      </button>
+      {" "}
+      <br />
+      <br />
+      <Link to="/payments/about">
+        Go to same micro-frontend deeper link
+      </Link>
+      {" "}
+      <br />
     </>
   );
 };

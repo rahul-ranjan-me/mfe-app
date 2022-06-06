@@ -4,7 +4,7 @@ import App from "./App";
 import "./index.scss";
 
 function setupApp() {
-  return <App />
+  return <App />;
 }
 
 export default setupApp;

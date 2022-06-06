@@ -7,7 +7,6 @@ const ModuleFederationPlugin =
   require("webpack").container.ModuleFederationPlugin;
 const ExternalTemplateRemotesPlugin = require("external-remotes-plugin");
 const path = require("path");
-const deps = require("./package.json").dependencies;
 const mode = process.env.mode ? process.env.mode : "development";
 const port = process.env.port || 6003;
 const { allComponents, moduleName } = require(path.resolve(
@@ -80,10 +79,6 @@ module.exports = {
           "react-dom": {
             singleton: true,
             requiredVersion: "18.0.0",
-          },
-          "react-router-dom": {
-            singleton: true,
-            requiredVersion: '^6.3.0',
           },
         },
       ],

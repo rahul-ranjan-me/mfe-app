@@ -4,13 +4,11 @@
   "description": "MFA Shell built using Create MFA App CLI",
   "main": "index.js",
   "scripts": {
-    "manifest": "node ./scripts/createManifest.js",
-    "copy-manifest": "node ./scripts/copyManifest.js",
     "start": "set PORT=<%= port_number %> && webpack serve",
-    "build": "npm run lint && set NODE_ENV=production && npm run clean && npm run manifest && npm run copy-manifest && webpack",
+    "build": "npm run lint && set NODE_ENV=production && npm run clean && webpack",
     "lint": "eslint --quiet \"src/**/*.{js,jsx}\"",
     "serve": "serve dist -p <%= port_number %>",
-    "clean": "riamrf ./dist"
+    "clean": "npx riamrf ./dist"
   },
   "private": true,
   "keywords": [],

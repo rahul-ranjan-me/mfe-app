@@ -27,6 +27,7 @@ module.exports = {
     "no-param-reassign": "off",
     "no-process-env": "off",
     "arrow-body-style": "off",
+    "react/function-component-definition": "off",
     "max-len": [
       2,
       {

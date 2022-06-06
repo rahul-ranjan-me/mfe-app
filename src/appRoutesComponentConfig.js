@@ -1,4 +1,4 @@
-const moduleName = "micro_frontend_app";
+const moduleName = "module_expose_app";
 
 const allComponents = {
   "./header": "./src/components/Header",

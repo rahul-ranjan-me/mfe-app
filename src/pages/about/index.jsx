@@ -1,5 +1,6 @@
 import React, { useContext, useRef } from "react";
 import { GlobalContext } from "shared/Components";
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   const { user, setUser } = useContext(GlobalContext);
@@ -13,7 +14,8 @@ const Home = () => {
 
       <button type="button" onClick={onBtnClick}>
         Update
-      </button>
+      </button> <br /> <br />
+      <Link to="/">Go to shell container main page</Link> <br />
     </>
   );
 };

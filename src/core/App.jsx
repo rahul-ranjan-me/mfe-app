@@ -8,7 +8,7 @@ import "./index.scss";
 function App() {
   return (
     <GlobalState>
-      <div className="app">
+      <div id="app">
         <Router>
           <Header />
           <AppRoutes />

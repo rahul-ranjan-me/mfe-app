@@ -1,11 +1,12 @@
+import React from "react";
 import { useRoutes } from "react-router-dom";
 
-import ROUTES from '../const/routes'
+import ROUTES from "../const/routes";
 
 const AppRoutes = () => {
-  let element = useRoutes(ROUTES);
+  const element = useRoutes(ROUTES);
 
-  return element;
+  return <div className="app-container">{element}</div>;
 };
 
 export default AppRoutes;

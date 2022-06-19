@@ -1,5 +1,10 @@
-.sample-module-federated-component {
+#app .app-container .sample-module-federated-component {
   background-color: #d1d1d1;
   padding: 20px;
   border-radius: 10px;
+  margin-top: 20px;
+
+  h2{
+    margin-top: 0;
+  }
 }

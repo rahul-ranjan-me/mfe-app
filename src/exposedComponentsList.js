@@ -1,3 +1,3 @@
-const componentsArray = ['./header']
+const componentsArray = ["./header"];
 
-export default componentsArray
+export default componentsArray;

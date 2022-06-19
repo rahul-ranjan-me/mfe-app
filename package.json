@@ -10,13 +10,13 @@
     "serve": "serve dist -p <%= port_number %>",
     "clean": "npx riamrf ./dist"
   },
-  "private": true,
-  "keywords": [],
-  "author": "",
+  "private": false,
+  "keywords": ["module federation", "webpack module federation", "create mfa app", "module federation bootstrap cli", "Micro frontend bootstrap CLI"],
+  "author": "Rahul Ranjan",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "<%= clone_url %>"
+    "url": "git@github.com:rahul-ranjan-me/mfe-app.git"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",

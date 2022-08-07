@@ -9,10 +9,10 @@ const ExternalTemplateRemotesPlugin = require("external-remotes-plugin");
 const path = require("path");
 const mode = process.env.mode ? process.env.mode : "development";
 const port = process.env.port || 6003;
-const { allComponents, moduleName } = require(path.resolve(
+const { exposedComponents, moduleName } = require(path.resolve(
   __dirname,
-  "src/appRoutesComponentConfig.js"
-));
+  "src/manifest.js"
+)).default;
 
 module.exports = {
   entry: "./src/index",
@@ -69,7 +69,10 @@ module.exports = {
       remotes: {
         shared: "shared_components@[window.sharedComponent]/remoteEntry.js",
       },
-      exposes: allComponents,
+      exposes: {
+        ...exposedComponents,
+        "./manifest": "./src/manifest",
+      },
       shared: [
         {
           react: {
